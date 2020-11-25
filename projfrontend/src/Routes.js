@@ -13,6 +13,8 @@ import AddProduct from "./admin/AddProduct";
 import ManageProducts from "./admin/ManageProducts";
 import UpdateProduct from "./admin/UpdateProduct";
 import UpdateCategory from "./admin/UpdateCategory";
+import { getProducts } from "./core/helper/coreapicalls";
+import Cart from "./core/Cart";
 
 
 const Routes = () => {
@@ -22,6 +24,8 @@ const Routes = () => {
                 <Route path = "/" exact component = {Home}/>
                 <Route path = "/signup" exact component = {Signup}/>
                 <Route path = "/signin" exact component = {Signin}/>
+                <Route path = "/products" exact component = {getProducts}/>
+                <Route path = "/cart" exact component = {Cart}/>
                 <AdminRoute path = "/admin/dashboard" exact component = {AdminDashBoard}/>
                 <PrivateRoute path = "/user/dashboard" exact component = {UserDashBoard}/>
                 <AdminRoute path = "/admin/create/category" exact component = {AddCategory}/>

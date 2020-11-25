@@ -69,7 +69,7 @@ exports.getAllProducts = (req,res) => {
     let sortBy = req.query.sortBy ? req.query.sortBy : "_id";
 
     Product.find()
-        .select("_photo")
+        .select("-photo")
         .populate("category")
         .sort([[sortBy,"asc"]])
         .limit(limit)
